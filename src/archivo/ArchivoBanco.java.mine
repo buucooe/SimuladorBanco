@@ -1,0 +1,15 @@
+package archivo;
+
+import java.util.List;
+import cuenta_persona_banco.Operacion;
+
+import cuenta_persona_banco.Cuenta;
+
+public class ArchivoBanco 
+{
+	public void escribirArchivo(Cuenta cuenta)
+	{
+		List<String> op = cuenta.;
+		
+	}
+}
