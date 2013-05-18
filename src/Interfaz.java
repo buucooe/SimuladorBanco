@@ -101,8 +101,10 @@ public class Interfaz
 						this.hipoteca = new Hipoteca(periodo, tasaInteres);
 					case 4:
 						
+						break;
 					default:
 						System.out.println("Opcion no valida");
+						break;
 					
 				}
 				break;
@@ -111,6 +113,8 @@ public class Interfaz
 				break;
 				
 			default:
+				System.out.println("Opcion no valida");
+				break;
 		}
 	}
 

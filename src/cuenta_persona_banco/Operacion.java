@@ -8,7 +8,7 @@ public class Operacion
 {
 	private Cuenta cuenta;
 	private Persona persona;
-	protected  Date fechaOp;
+	protected  Date fechaOp = new Date();
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 	
 	public void depositar(double cantidad, Cuenta cuenta, Persona persona)
@@ -59,7 +59,7 @@ public class Operacion
 	
 	public String getFechaOperacion()
 	{
-		return dateFormat.format(fechaOp);
+		return dateFormat.format(this.fechaOp);
 	}
 	
 }
