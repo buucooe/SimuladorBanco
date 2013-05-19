@@ -29,7 +29,7 @@ public abstract class Persona
 		return cuenta;
 	}
 
-	public void setCuenta(Cuenta cuenta) 
+	public void setCuenta(String numCuenta) 
 	{
 		if(cantidadCuentas < 5)
 		{
@@ -72,11 +72,7 @@ public abstract class Persona
 	{
 		return this.numerosCuenta;
 	}
-
-	public void setNumerosCuenta(List<String> numerosCuenta)
-	{
-		this.numerosCuenta = numerosCuenta;
-	}
 	
+
 	
 }

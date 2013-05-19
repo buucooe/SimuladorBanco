@@ -16,8 +16,6 @@ public class Hipoteca extends Cuenta
 		
 		this.setPeriodoCreditoMeses(periodoEstablecido);
 		this.setTasaInteres(tasaInteres);
-		System.out.println("Cuenta de hipoteca creada a " + periodoEstablecido
-				+ " meses" + " con una tasa de interes de " + tasaInteres + "%");
 	}
 	
 	protected boolean checarPeriodoActual(int periodoActual)

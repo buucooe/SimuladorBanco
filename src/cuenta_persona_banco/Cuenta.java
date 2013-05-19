@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public abstract class Cuenta 
 {
@@ -36,9 +37,12 @@ public abstract class Cuenta
 		return this.numeroCuenta;
 	}
 	
-	public void setNumeroCuenta(String numeroCuenta)
+	public void setNumeroCuenta()
 	{
-		this.numeroCuenta = numeroCuenta;
+		Random rand = new Random();
+		this.numeroCuenta =  Integer.toString(rand.nextInt(1000) + 1);
+		System.out.println("Numero de cuenta: " + this.numeroCuenta );
+		
 	}
 	
 	public String getTipoCuenta()
