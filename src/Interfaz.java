@@ -44,30 +44,21 @@ public class Interfaz
 						System.out.print("Opcion: ");
 						opcion = leer.nextInt();
 						
-						if(opcion == 0)
-						{
-							break;
-						}
-						else
-						{
-							System.out.println("Numero de cliente: ");
-							usuario = leer.next();
-							try
-							{
-								persona = persona.getPersona(usuario);
-							} catch(Exception e)
-							{
-								System.err.println("Err: No se ha dado de alta este cliente");
-								break;
-							}
-							
-						}
-						
 						switch(opcion)
 						{
 							case 1:
 								do
 								{
+									System.out.println("Numero de cliente: ");
+									usuario = leer.next();
+									try
+									{
+										persona = persona.getPersona(usuario);
+									} catch(Exception e)
+									{
+										System.err.println("Err: No se ha dado de alta este cliente");
+										break;
+									}
 									System.out.println("1. Debito");
 									System.out.println("2. Credito");
 									System.out.println("3. Hipoteca");
@@ -80,7 +71,6 @@ public class Interfaz
 										case 1:
 											debito = new Debito();
 											debito.setNumeroCuenta();
-											System.out.println("entre");
 											persona = new Cliente();
 											this.persona.setCuenta(debito);
 											System.out.println(persona.getNumerosCuenta());
@@ -211,10 +201,7 @@ public class Interfaz
 					} while(opcion != 0);
 					opcion = 1;
 				case 3:
-					break;
-				case 4: 
-					break;
-				case 0:
+					//Iniciar sesion
 					break;
 				default:
 					System.out.println("Opcion no válida");

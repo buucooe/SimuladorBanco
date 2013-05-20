@@ -1,7 +1,5 @@
 package html_pdf;
 
-import java.util.Date;
-
 import com.itextpdf.text.DocumentException;
 
 
@@ -11,12 +9,12 @@ import cuenta_persona_banco.Cuenta;
 
 public class Reporte 
 {
-	protected Date fechaInicio,fechaFin;
-	protected Cuenta cuenta,cuentaTemp;
+	protected String fechaInicio,fechaFin;
+	protected Cuenta cuenta;
 	protected ManejoArchivo archivo= new ArchivoCuenta();
 	protected Boolean delimitar;
 	
-	public Reporte(Date fechaInicio,Date fechaFin,Cuenta cuenta)//listo
+	public Reporte(String fechaInicio,String fechaFin,Cuenta cuenta)
 	{
 		this.fechaFin = fechaFin;
 		this.fechaInicio = fechaInicio;
@@ -24,34 +22,36 @@ public class Reporte
 		delimitar = true;
 	}
 	
-	public Reporte(Cuenta cuenta)//listo
+	public Reporte(Cuenta cuenta)
 	{	
 		this.cuenta = cuenta;
 		delimitar = false;
 	}
 	
+	
 	public void generarReporte()
 	{
-		cuentaTemp = archivo.leerArchivo(cuenta);
-		try {
+		try 
+		{
 			escribirHeader();
-		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} 
+		catch (DocumentException e) 
+		{
+			System.out.println("Algo malo pasó :|");
 		}
 		escribirBody();
 		escribirFooter();
 	}
 	
-	protected void escribirBody()//listo
+	protected void escribirBody()
 	{	
 	}
 	
-	protected void escribirHeader() throws DocumentException//listo
+	protected void escribirHeader() throws DocumentException
 	{	
 	}
 	
-	protected void escribirFooter()//listo
+	protected void escribirFooter()
 	{	
 	}
 }
