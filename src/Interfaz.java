@@ -4,9 +4,7 @@ import cuenta_persona_banco.*;
 
 public class Interfaz 
 {
-	protected Persona cliente;
-	private Persona gerente;
-	private Persona empleado;
+	protected Persona persona;
 	private Debito debito;
 	private Credito credito;
 	private Hipoteca hipoteca;
@@ -54,6 +52,16 @@ public class Interfaz
 						{
 							System.out.println("Numero de cliente: ");
 							usuario = leer.next();
+							try
+							{
+								persona = new Cliente();
+								persona.setUsuario(usuario);
+							} catch(Exception e)
+							{
+								System.err.println("Err: No se ha dado de alta este cliente");
+								break;
+							}
+							
 						}
 						
 						switch(opcion)
@@ -68,15 +76,26 @@ public class Interfaz
 									System.out.println("0. Atras");
 									System.out.println("Opcion: ");
 									opcion = leer.nextInt();
-									System.out.println(" ");
 									switch(opcion)
 									{
 										case 1:
 											debito = new Debito();
 											debito.setNumeroCuenta();
+											System.out.println("entre");
+											persona = new Cliente();
+											persona.setCuenta(debito);
+											System.out.println(persona.getNumerosCuenta());
 											break;
 										case 2:
 											credito = new Credito();
+											try
+											{
+												banco.aprobar(credito);
+											} catch(Exception e)
+											{
+												System.err.println("Err: Se necesitan crear empleados y gerentes");
+												break;
+											}
 											credito.setNumeroCuenta();
 											break;
 										case 3:
@@ -111,31 +130,82 @@ public class Interfaz
 								} while(opcion != 0);
 								opcion = 1;
 							case 2:
-								System.out.println("Numero de cuenta: ");
-								numeroCuenta = leer.next();
+								//No se q onda aqui, hay q ver.
 								try
 								{
-									cliente.setCuenta(numeroCuenta);
+									//persona.setCuenta(numeroCuenta);
 								}
 								catch(Exception e)
 								{
 									System.err.println("Err: Se necesitan crear empleados y gerentes");
 									break;
 								}
-								System.out.println(cliente.getNumerosCuenta());
+								System.out.println(persona.getNumerosCuenta());
 								break;
 							case 3:
+								//Eliminar una cuenta
 								break;
 							case 4:
+								//Generar reporte pdf
 								break;
 							case 5:
+								//Generar reporte html
 								break;
-								
 						}
 					} while (opcion != 0);
 					opcion = 1;
 				case 2:
-					break;
+					do
+					{
+						System.out.println("1. Dar de alta un cliente");
+						System.out.println("2. Dar de alta un gerente nivel 1");
+						System.out.println("3. Dar de alta un gerente nivel 2");
+						System.out.println("4. Dar de alta un empleado");
+						System.out.println("5. Eliminar un usuario");
+						System.out.println("0. Atras");
+						opcion = leer.nextInt();
+						switch(opcion)
+						{
+							case 1:
+								persona = new Cliente();
+								System.out.println("Nombre del cliente: ");
+								nombre = leer.next();
+								persona.setNombre(nombre);
+								System.out.println("Usuario: ");
+								usuario = leer.next();
+								persona.setUsuario(usuario);
+								break;
+							case 2:
+								persona = new Gerente(1);
+								System.out.println("Nombre del gerente: ");
+								nombre = leer.next();
+								persona.setNombre(nombre);
+								System.out.println("Usuario: ");
+								usuario = leer.next();
+								persona.setUsuario(usuario);
+								break;
+							case 3:
+								persona = new Gerente(2);
+								System.out.println("Nombre del gerente: ");
+								nombre = leer.next();
+								persona.setNombre(nombre);
+								System.out.println("Usuario: ");
+								usuario = leer.next();
+								persona.setUsuario(usuario);
+								break;
+							case 4:
+								persona = new Empleado();
+								System.out.println("Nombre del empleado: ");
+								nombre = leer.next();
+								persona.setNombre(nombre);
+								System.out.println("Usuario: ");
+								usuario = leer.next();
+								persona.setUsuario(usuario);
+								break;
+								
+						}
+					} while(opcion != 0);
+					opcion = 1;
 				case 3:
 					break;
 				case 4: 
@@ -144,7 +214,7 @@ public class Interfaz
 					break;
 				default:
 					System.out.println("Opcion no válida");
-					leer.next();
+					break;
 			}
 		} while(opcion != 0);
 	}

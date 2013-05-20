@@ -12,6 +12,7 @@ public class Main
 	{
 		Interfaz in = new Interfaz();
 		in.generarMenu();
+		
 	}
 
 }

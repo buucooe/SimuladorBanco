@@ -33,6 +33,8 @@ public class Gerente extends Ejecutivo
 		}
 		else
 		{
+			System.err.println("No se pudo completar su transacción");
+			System.err.println("intentelo de nuevo.");
 			return null;
 		}
 	}

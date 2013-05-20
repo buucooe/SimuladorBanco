@@ -8,6 +8,7 @@ public class Hipoteca extends Cuenta
 	
 	public Hipoteca(int periodoEstablecido, double tasaInteres)
 	{
+		super.setTipoCuenta("hip");
 		this.crear(periodoEstablecido, tasaInteres);
 	}
 	

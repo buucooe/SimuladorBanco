@@ -8,6 +8,7 @@ public abstract class Persona
 	private Cuenta cuenta;
 	private String usuario,
 				   nombre;
+	protected Persona persona;
 	protected List<String> numerosCuenta;
 	protected List<Cuenta> cuentas;
 	private int cantidadCuentas;
@@ -29,7 +30,7 @@ public abstract class Persona
 		return cuenta;
 	}
 
-	public void setCuenta(String numCuenta) 
+	public void setCuenta(Cuenta cuenta) 
 	{
 		if(cantidadCuentas < 5)
 		{
@@ -73,6 +74,11 @@ public abstract class Persona
 		return this.numerosCuenta;
 	}
 	
+	public Persona getPersona(String usuario)
+	{
+		this.usuario = usuario;
+		return this.persona;
+	}
 
 	
 }
