@@ -5,12 +5,11 @@ import archivo.*;
 public class Main 
 {
 
-	/**
-	 * @param args
-	 */
+	private Persona persona;
 	public static void main(String[] args)
 	{
 		Interfaz in = new Interfaz();
+		
 		in.generarMenu();
 		
 	}

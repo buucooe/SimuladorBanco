@@ -54,8 +54,7 @@ public class Interfaz
 							usuario = leer.next();
 							try
 							{
-								persona = new Cliente();
-								persona.setUsuario(usuario);
+								persona = persona.getPersona(usuario);
 							} catch(Exception e)
 							{
 								System.err.println("Err: No se ha dado de alta este cliente");
@@ -83,7 +82,7 @@ public class Interfaz
 											debito.setNumeroCuenta();
 											System.out.println("entre");
 											persona = new Cliente();
-											persona.setCuenta(debito);
+											this.persona.setCuenta(debito);
 											System.out.println(persona.getNumerosCuenta());
 											break;
 										case 2:
@@ -98,7 +97,7 @@ public class Interfaz
 												break;
 											}
 											credito.setNumeroCuenta();
-											persona.setCuenta(credito);
+											this.persona.setCuenta(credito);
 											break;
 										case 3:
 											try
@@ -124,7 +123,7 @@ public class Interfaz
 												break;
 											}
 											hipoteca.setNumeroCuenta();
-											persona.setCuenta(hipoteca);
+											this.persona.setCuenta(hipoteca);
 											break;
 										case 4:
 											cheques = new Cheques();
