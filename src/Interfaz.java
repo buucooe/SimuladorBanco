@@ -97,6 +97,7 @@ public class Interfaz
 												break;
 											}
 											credito.setNumeroCuenta();
+											persona.setCuenta(credito);
 											break;
 										case 3:
 											try
@@ -121,10 +122,12 @@ public class Interfaz
 												break;
 											}
 											hipoteca.setNumeroCuenta();
+											persona.setCuenta(hipoteca);
 											break;
 										case 4:
 											cheques = new Cheques();
 											cheques.setNumeroCuenta();
+											persona.setCuenta(cheques);
 											break;
 									}
 								} while(opcion != 0);
