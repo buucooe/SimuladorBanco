@@ -90,6 +90,7 @@ public class Interfaz
 											credito = new Credito();
 											try
 											{
+												banco = new Banco();
 												banco.aprobar(credito);
 											} catch(Exception e)
 											{
@@ -115,6 +116,7 @@ public class Interfaz
 											}
 											try
 											{
+												banco = new Banco();
 												banco.aprobar(hipoteca);
 											} catch(Exception e)
 											{
